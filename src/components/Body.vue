@@ -1,7 +1,10 @@
 <template>
     <div class="background">
-        <div class="container">
+        <div v-if="albumInfos.length > 0" class="container">
             <Album v-for="(album,index) in albumInfos" :key="index" :details="album" />
+        </div>
+        <div class="loading" v-else>
+            <i class="fas fa-circle-notch"></i>
         </div>
     </div>
 </template>
@@ -29,7 +32,7 @@ export default {
 <style lang="scss" scoped>
     .background{
         background-color: #1E2D3B;
-        height: calc(100vh - 70px);
+        min-height: calc(100vh - 70px);
 
         .container{
             width: 70%;
@@ -38,6 +41,24 @@ export default {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+        }
+
+        .loading{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00D856;
+            font-size: 200px;
+            position: relative;
+            top: 300px;
+            animation: rotate 2s linear infinite;
+        }
+
+
+        @keyframes rotate {
+            to{
+                transform: rotate(360deg);
+            }
         }
     }
 </style>
