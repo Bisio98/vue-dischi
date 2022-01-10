@@ -1,5 +1,5 @@
 <template>
-    <div class="single_album">
+    <div class="single_album" :class="hide" >
         <img :src="details.poster" alt="">
         <h2>{{ details.title.toUpperCase() }}</h2>
         <h3>{{ details.author }}</h3>
