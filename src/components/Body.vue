@@ -37,8 +37,9 @@ export default {
     },
     methods: {
         reset: function(){
-            this.activeAuthor = null;
-            this.activeGenre = null;
+            this.activeAuthor = '';
+            this.activeGenre = '';
+            
         }
     },
     created: function(){
